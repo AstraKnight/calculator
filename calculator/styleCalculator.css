@@ -1,0 +1,64 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  font-family: Verdana, serif; /* things for the buttons*/
+  font-weight: normal;
+}
+
+/* set the background color */
+body{
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #ffb366, #ffff4d); /*FROM blue to green #00aaff, #00ff6C TO orange to yellow*/
+}
+
+/* set the calculator grid */
+.calculator-grid{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh; /*distance between buttons*/
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/* well positioning buttons */
+.calculator-grid > button{
+  cursor: pointer; /*it changes the arrow into a hand when on button*/
+  font-size: 2rem; /*bigger numbers*/
+  border: 1px solid orange; /*ex white*/
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+/* change color when on buttons */
+.calculator-grid > button:hover{
+  background-color: rgba(255, 255, 255, .90); /* .90 change opacity*/
+}
+
+/* to stretch buttons */
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1 / -1; /*from col 1 to the last*/
+  background-color:	rgba(249, 238, 225, .75);	/*rgba(0, 0, 0, .75); black*/
+  display: flex;
+  align-items: flex-end; /*output on the right*/
+  justify-content: space-around;
+  flex-direction: column; /*output one over the other*/
+  padding: 10px; /*avoid numbers against border!*/
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* change the color of numbers on display and size */
+.output .previous-operand{
+  color: rgba(128, 128, 128, .75);					/*rgba(255, 255, 255, .75) white; TO GRAY (128) IN rgba*/
+  font-size: 1.5rem;
+}
+
+.output .current-operand{
+  color: black;
+  font-size: 2.5rem;
+}
